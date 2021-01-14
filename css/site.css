@@ -1,0 +1,41 @@
+.code {
+  font-family: monospace;
+  font-size: 1.25rem;
+}
+
+.error {
+  color: #f2522e;
+}
+
+.navbar {
+  background-color: #f1f9ff;
+}
+
+/* .navbar a {
+  color: #fff;
+} */
+
+.jumbotron {
+  background-color: #404756;
+  color: #f4f9ff;
+}
+
+.btn-primary {
+  background-color: #0097cc;
+  border: #0097cc;
+  color: #f4f9ff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-color: #1261a6;
+  border-color: #1261a6; /*set the color you want here*/
+  color: #f4f9ff;
+}
+
+.tech-used {
+  font-weight: bold;
+}
