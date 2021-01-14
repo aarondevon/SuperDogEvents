@@ -27,7 +27,7 @@ const getStates = () => {
 
 
 
-
+// Create dropdown menu
 const populateDropdownMenu = () => {
   const states = getStates();
 
