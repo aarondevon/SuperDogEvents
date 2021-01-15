@@ -13,30 +13,30 @@ const eventData = [{event: "ComicCon",city: "New York",state: "New York",attenda
 const dropdownMenu = document.querySelector('#dropdown-menu');
 const tableMainBody = document.querySelector('#table-main-body');
 
-// get states 
-const getStates = () => {
-  const uniqueStates = [];
-  let state;
+// get cities
+const getCities = () => {
+  const uniqueCities = [];
+  let city;
   eventData.forEach(eventObj => {
-    state = eventObj.state;
-    if (!uniqueStates.includes(state)) {
-        uniqueStates.push(state);
+    city = eventObj.city;
+    if (!uniqueCities.includes(city)) {
+      uniqueCities.push(city);
     }
   })
-  console.log(uniqueStates);
-  return uniqueStates;
+  console.log(uniqueCities);
+  return uniqueCities;
 };
 
 // Create dropdown menu
 const populateDropdownMenu = () => {
-  const states = getStates();
+  const cities = getCities();
 
-  states.forEach(state => {
+  cities.forEach(city => {
     const aTag = document.createElement('a')
     aTag.classList.add("dropdown-item");
     aTag.setAttribute('href', '#')
-    aTag.setAttribute('id', `${state.toLowerCase()}`);
-    aTag.innerText = state;
+    aTag.setAttribute('id', `${city.toLowerCase()}`);
+    aTag.innerText = city;
     dropdownMenu.appendChild(aTag);
   })
   const aTag = document.createElement('a')
@@ -63,7 +63,7 @@ const populateTable = (dataSrc, table) => {
 
 // Get stats
 const getEventStats = (event) => {
-  const state = event.target.innerText;
+  const city = event.target.innerText;
 
   let totalAttendance = 0;
   let totalEvents = 0;
@@ -72,7 +72,7 @@ const getEventStats = (event) => {
 
   // get total attendance and total events
   eventData.forEach(eventObj => {
-    if (eventObj.state === state )
+    if (eventObj.city === city )
     {
       totalAttendance += eventObj.attendance;
       totalEvents ++;
@@ -85,7 +85,7 @@ const getEventStats = (event) => {
   })
 
   return ({
-    "State": state,
+    "City": city,
     "Total Attendance": totalAttendance,
     "Average Attendance": totalAttendance / totalEvents,
     "Most Attended": mostAttended,
@@ -105,9 +105,9 @@ const statTablePrinter = (stats) => {
 
   // Create table data
   for (key in stats) {
-    if (key === 'State') {
+    if (key === 'City') {
       tableHeadData.setAttribute('colspan', 2);
-      tableHeadData.innerText = `Stats For ${stats.State} Events`;
+      tableHeadData.innerText = `Stats For ${stats.City} Events`;
       tableHeadRow.appendChild(tableHeadData);
       tableHead.appendChild(tableHeadRow);
       tableStats.appendChild(tableHead);
