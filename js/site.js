@@ -97,10 +97,10 @@ const getEventStats = (event) => {
 
   return ({
     "City": city,
-    "Total Attendance": totalAttendance,
-    "Average Attendance": totalAttendance / totalEvents,
-    "Most Attended": mostAttended,
-    "Least Attended": leastAttended
+    "Total Attendance": totalAttendance.toLocaleString('en'),
+    "Average Attendance": Math.round(totalAttendance / totalEvents).toLocaleString('en'),
+    "Most Attended": mostAttended.toLocaleString('en'),
+    "Least Attended": leastAttended.toLocaleString('en')
   });
 };
 
@@ -122,17 +122,19 @@ const statTablePrinter = (stats) => {
       tableHeadRow.appendChild(tableHeadData);
       tableHead.appendChild(tableHeadRow);
       tableStats.appendChild(tableHead);
+    } else {
+      const tableBodyRow = document.createElement('tr');
+      const tableData1 = document.createElement('td');
+      tableData1.innerText = key;
+      const tableData2 = document.createElement('td');
+      tableData2.innerText = stats[key];
+      console.log(tableData2);
+      tableBodyRow.appendChild(tableData1);
+      tableBodyRow.appendChild(tableData2);
+  
+      tableStatsBody.appendChild(tableBodyRow);
     }
-    const tableBodyRow = document.createElement('tr');
-    const tableData1 = document.createElement('td');
-    tableData1.innerText = key;
-    const tableData2 = document.createElement('td');
-    tableData2.innerText = stats[key];
-console.log(tableData2);
-    tableBodyRow.appendChild(tableData1);
-    tableBodyRow.appendChild(tableData2);
 
-    tableStatsBody.appendChild(tableBodyRow);
   }
   tableStats.appendChild(tableStatsBody);
 }
