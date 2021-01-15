@@ -58,31 +58,6 @@
       </nav>
       <!-- Jumbotron section -->
       <div class="jumbotron">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="dropdownId"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  >Pick Location</a
-                >
-                <div
-                  id="dropdown-menu"
-                  class="dropdown-menu"
-                  aria-labelledby="dropdownId"
-                >
-                  <a class="dropdown-item" href="#">Action 1</a>
-                  <a class="dropdown-item" href="#">Action 2</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
         <div class="container">
           <div class="row">
             <div class="col-12 text-center">
@@ -92,86 +67,47 @@
 
           <!-- <img src="img/TacoCat.jpg" alt="Taco cat" /> -->
           <!-- <p class="lead">Jumbo helper text</p> -->
-
           <div class="row">
-            <div class="col-12 col-md-6">
-              <h2>Enter your numbers or:</h2>
-              <button id="generate-numbers" class="btn btn-primary btn-lg">
-                Generate Numbers
+            <div class="col-12">
+              <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="dropdownId"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        >Pick Location</a
+                      >
+                      <div
+                        id="dropdown-menu"
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownId"
+                      ></div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h2>All Data</h2>
+              <button id="add-data" class="btn btn-primary btn-lg">
+                Add Data
               </button>
               <hr />
-              <div id="form-container">
-                <form id="sunset-form">
-                  <div class="form-group">
-                    <label for="input1">First Number</label>
-                    <input
-                      type="number"
-                      id="input1"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="input2">Second Number</label>
-                    <input
-                      type="number"
-                      id="input2"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="input3">Third Number</label>
-                    <input
-                      type="number"
-                      id="input3"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="input4">Fourth Number</label>
-                    <input
-                      type="number"
-                      id="input4"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="input5">Fifth Number</label>
-                    <input
-                      type="number"
-                      id="input5"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="input5">Sixth Number</label>
-                    <input
-                      type="number"
-                      id="input6"
-                      class="form-control numInput"
-                      onClick="this.select();"
-                      required
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">
-                    Check
-                  </button>
-                </form>
-              </div>
             </div>
-            <div class="col-12 col-md-6 text-center">
-              <h2>Results</h2>
-              <hr />
-              <div id="output"></div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <table id="event-data">
+                <thead id="table-head"></thead>
+                <tbody id="table-body"></tbody>
+              </table>
             </div>
           </div>
         </div>
