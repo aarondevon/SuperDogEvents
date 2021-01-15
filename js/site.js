@@ -35,10 +35,16 @@ const populateDropdownMenu = () => {
     const aTag = document.createElement('a')
     aTag.classList.add("dropdown-item");
     aTag.setAttribute('href', '#')
-    aTag.setAttribute('id', `${state}`);
+    aTag.setAttribute('id', `${state.toLowerCase()}`);
     aTag.innerText = state;
     dropdownMenu.appendChild(aTag);
   })
+  const aTag = document.createElement('a')
+    aTag.classList.add("dropdown-item");
+    aTag.setAttribute('href', '#')
+    aTag.setAttribute('id', `all`);
+    aTag.innerText = 'All';
+    dropdownMenu.appendChild(aTag);
 }
 
 // Populate table with data
@@ -56,8 +62,8 @@ const populateTable = (dataSrc, table) => {
 };
 
 // Get stats
-const getStats = (event) => {
-  const state = event.target.id;
+const getEventStats = (event) => {
+  const state = event.target.innerText;
 
   let totalAttendance = 0;
   let totalEvents = 0;
@@ -70,11 +76,12 @@ const getStats = (event) => {
     {
       totalAttendance += eventObj.attendance;
       totalEvents ++;
-    }
+    } 
 
     if (eventObj.attendance > mostAttended) {
       mostAttended = eventObj.attendance;
     }
+
   })
 
   return ({
@@ -95,7 +102,7 @@ const statTablePrinter = (stats) => {
   const tableHeadData = document.createElement('th');
 
   const tableStatsBody = document.createElement('tbody');
-  
+
   // Create table data
   for (key in stats) {
     if (key === 'State') {
@@ -125,6 +132,6 @@ document.onload = populateDropdownMenu();
 document.onload = populateTable(eventData, tableMainBody);
 
 dropdownMenu.addEventListener('click', (event) => {
-  statTablePrinter(getStats(event));
+  statTablePrinter(getEventStats(event));
   // console.log(event.target.id);
 })
