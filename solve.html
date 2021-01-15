@@ -14,120 +14,117 @@
     <title>Super Dog Events | Solve</title>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="index.html">Home</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="solve.html">Solve</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="code.html">Code</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://www.aarondevon.com/"
-                target="_blank"
-                >Portfolio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://github.com/aarondevon/SuperDogEvents"
-                target="_blank"
-                >GitHub</a
-              >
-            </li>
-          </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="solve.html">Solve</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="code.html">Code</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.aarondevon.com/"
+              target="_blank"
+              >Portfolio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://github.com/aarondevon/SuperDogEvents"
+              target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Jumbotron section -->
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-3">Super Dog Events</h1>
         </div>
-      </nav>
-      <!-- Jumbotron section -->
-      <div class="jumbotron">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <h1 class="display-3">Super Dog Events</h1>
-            </div>
-          </div>
+      </div>
 
-          <!-- <img src="img/TacoCat.jpg" alt="Taco cat" /> -->
-          <!-- <p class="lead">Jumbo helper text</p> -->
-          <div class="row">
-            <div class="col-12">
-              <nav class="navbar navbar-expand-sm navbar-light">
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="dropdownId"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        >Pick Location</a
-                      >
-                      <div
-                        id="dropdown-menu"
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownId"
-                      ></div>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
+      <!-- <img src="img/TacoCat.jpg" alt="Taco cat" /> -->
+      <!-- <p class="lead">Jumbo helper text</p> -->
+      <div class="row">
+        <div class="col-2">
+          <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="dropdownId"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Pick Location</a
+                  >
+                  <div
+                    id="dropdown-menu"
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownId"
+                  ></div>
+                </li>
+              </ul>
             </div>
-          </div>
+          </nav>
+        </div>
+      </div>
 
-          <div class="row">
-            <div class="col-12">
-              <table id="table-stats" class="table"></table>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12">
-              <h2>All Data</h2>
-              <button id="add-data" class="btn btn-primary btn-lg">
-                Add Data
-              </button>
-              <hr />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <table id="event-data" class="table">
-                <thead id="table-main-head">
-                  <tr>
-                    <th>Event Name</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Attendance</th>
-                    <th>Event Date</th>
-                  </tr>
-                </thead>
-                <tbody id="table-main-body"></tbody>
-              </table>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-12 col-md-4">
+          <table id="table-stats" class="table"></table>
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-6">
+        <h2>All Data</h2>
+      </div>
+      <div class="col-6 text-right">
+        <button id="add-data" class="btn btn-primary btn-lg">Add Data</button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-12">
+        <table id="event-data" class="table">
+          <thead id="table-main-head">
+            <tr>
+              <th>Event Name</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Attendance</th>
+              <th>Event Date</th>
+            </tr>
+          </thead>
+          <tbody id="table-main-body"></tbody>
+        </table>
+      </div>
+    </div>
+
     <!-- Boostrap -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
