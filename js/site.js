@@ -68,19 +68,30 @@ const getEventStats = (event) => {
   let totalAttendance = 0;
   let totalEvents = 0;
   let mostAttended = 0;
+  let attended = [];
   let leastAttended = 0;
 
   // get total attendance and total events
   eventData.forEach(eventObj => {
-    if (eventObj.city === city )
+    if (eventObj.city === city || city === 'All')
     {
       totalAttendance += eventObj.attendance;
       totalEvents ++;
+
+      attended.push(eventObj.attendance);
+
+      if (eventObj.attendance > mostAttended) {
+        mostAttended = eventObj.attendance;
+      }
     } 
 
-    if (eventObj.attendance > mostAttended) {
-      mostAttended = eventObj.attendance;
-    }
+    leastAttended = attended[0];
+    //find least attended event
+    attended.forEach(attendance => {
+      if (attendance < leastAttended) {
+        leastAttended = attendance;
+      }
+    })
 
   })
 
