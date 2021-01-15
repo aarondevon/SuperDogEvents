@@ -1,3 +1,4 @@
+// Initial event data
 const eventData = [{event: "ComicCon",city: "New York",state: "New York",attendance: 240000,date: "06/01/2017"},
 {event: "ComicCon",city: "New York",state: "New York",attendance: 250000,date: "06/01/2018"},
 {event: "ComicCon",city: "New York",state: "New York",attendance: 257000,date: "06/01/2019"},
@@ -8,7 +9,9 @@ const eventData = [{event: "ComicCon",city: "New York",state: "New York",attenda
 {event: "HeroesCon",city: "Charlotte",state: "North Carolina",attendance: 45000,date: "06/01/2018"},
 {event: "HeroesCon",city: "Charlotte",state: "North Carolina",attendance: 50000,date: "06/01/2019"}]
 
+// get initial HTML elments
 const dropdownMenu = document.querySelector('#dropdown-menu');
+const tableMainBody = document.querySelector('#table-main-body');
 
 // get states 
 const getStates = () => {
@@ -32,7 +35,7 @@ const populateDropdownMenu = () => {
   const states = getStates();
 
   states.forEach(state => {
-    const aTag = document.createElement("a")
+    const aTag = document.createElement('a')
     aTag.classList.add("dropdown-item");
     aTag.setAttribute('href', `${state}`)
     aTag.innerText = state;
@@ -40,6 +43,20 @@ const populateDropdownMenu = () => {
   })
 }
 
+const populateTable = (table) => {
+
+  eventData.forEach(eventObj => {
+    const tableRow = document.createElement('tr');
+    for (let key in eventObj) {
+      const tableData = document.createElement('td');
+      tableData.innerText = eventObj[key];
+      tableRow.appendChild(tableData);
+    }
+    table.appendChild(tableRow);
+  })
+};
+
 
 document.onload = populateDropdownMenu();
+document.onload = populateTable(tableMainBody);
                         
