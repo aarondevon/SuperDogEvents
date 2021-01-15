@@ -43,9 +43,9 @@ const populateDropdownMenu = () => {
   })
 }
 
-const populateTable = (table) => {
+const populateTable = (dataSrc, table) => {
 
-  eventData.forEach(eventObj => {
+  dataSrc.forEach(eventObj => {
     const tableRow = document.createElement('tr');
     for (let key in eventObj) {
       const tableData = document.createElement('td');
@@ -58,5 +58,5 @@ const populateTable = (table) => {
 
 
 document.onload = populateDropdownMenu();
-document.onload = populateTable(tableMainBody);
+document.onload = populateTable(eventData, tableMainBody);
                         
