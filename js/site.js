@@ -62,8 +62,8 @@ const populateTable = (dataSrc, table) => {
 };
 
 // Get stats
-const getEventStats = (event) => {
-  const city = event.target.innerText;
+const getEventStats = (event, displayDefault) => {
+  const city = displayDefault ? 'All' : event.target.innerText;
 
   let totalAttendance = 0;
   let totalEvents = 0;
@@ -73,7 +73,7 @@ const getEventStats = (event) => {
 
   // get total attendance and total events
   eventData.forEach(eventObj => {
-    if (eventObj.city === city || city === 'All')
+    if (eventObj.city === city || city === 'All' )
     {
       totalAttendance += eventObj.attendance;
       totalEvents ++;
@@ -143,8 +143,9 @@ const statTablePrinter = (stats) => {
 
 document.onload = populateDropdownMenu();
 document.onload = populateTable(eventData, tableMainBody);
+document.onload = statTablePrinter(getEventStats(null, true));
 
 dropdownMenu.addEventListener('click', (event) => {
-  statTablePrinter(getEventStats(event));
+  statTablePrinter(getEventStats(event, false));
   // console.log(event.target.id);
 })
